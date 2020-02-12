@@ -55,8 +55,17 @@ def movies_with_director_key(name, movies_collection)
   result = []
   inner_index = 0
 while inner_index < movies_collection.length do
+<<<<<<< HEAD
   movies_collection[inner_index][:director_name] = name
   result << movies_collection[inner_index]
+=======
+   inner_inner_index = 0
+  while inner_index < movies_collection[inner_index].length do #result << director_name[inner_index]
+  movies_collection[inner_index][:director_name] = movies_collection[inner_index][name]## this added director_name and "steve"
+  result << movies_collection[inner_index][inner_inner_index]#[:movies][inner_inner_index]## this print the Jaws Hash
+  inner_inner_index += 1
+end
+>>>>>>> fa80300b6abbf4aee7f0bf9600157a45cce4ebca
   inner_index += 1
 end
 pp result
@@ -78,6 +87,7 @@ def gross_per_studio(collection)
 result = {}
 array_of_result = []
 inner_index = 0
+<<<<<<< HEAD
     while inner_index < collection.length do
          studio_name = collection[inner_index][:studio]
          studio_gross = collection[inner_index][:worldwide_gross]
@@ -89,6 +99,22 @@ inner_index = 0
     inner_index += 1
   end
 pp result
+=======
+    while inner_index < directors_database.length do
+      inner_inner_index = 0
+      while inner_inner_index < directors_database[inner_index].length do
+         puts studio_name = directors_database[inner_index][:movies][inner_inner_index][:studio]  ##prints 1st studio
+         puts studio_gross = directors_database[inner_index][:movies][inner_inner_index][:worldwide_gross]##print gross of 1st movie
+    #grand_total += directors_totals(source)[super_index]
+    #grand_total = directors_totals(collection).values.sum
+        inner_inner_index += 1
+      end
+    inner_index += 1
+  end
+#pp directors_database[inner_index][:movies][inner_inner_index][:worldwide_gross]##print gross of 1st movie
+#pp directors_database[inner_index][:movies][inner_inner_index][:studio]##prints 1st studio
+  result
+>>>>>>> fa80300b6abbf4aee7f0bf9600157a45cce4ebca
 end
 
 def movies_with_directors_set(source)
